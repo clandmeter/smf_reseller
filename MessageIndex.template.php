@@ -166,7 +166,7 @@ function template_main()
 		if (!empty($context['topics']))
 		{
 			echo '
-					<th scope="col" class="first_th" width="8%" colspan="2">&nbsp;</th>
+					<th scope="col" class="first_th" width="8%">&nbsp;</th>
 					<th scope="col" class="lefttext"><a href="', $scripturl, '?board=', $context['current_board'], '.', $context['start'], ';sort=subject', $context['sort_by'] == 'subject' && $context['sort_direction'] == 'up' ? ';desc' : '', '">', $txt['subject'], $context['sort_by'] == 'subject' ? ' <img src="' . $settings['images_url'] . '/sort_' . $context['sort_direction'] . '.gif" alt="" />' : '', '</a> / <a href="', $scripturl, '?board=', $context['current_board'], '.', $context['start'], ';sort=starter', $context['sort_by'] == 'starter' && $context['sort_direction'] == 'up' ? ';desc' : '', '">', $txt['started_by'], $context['sort_by'] == 'starter' ? ' <img src="' . $settings['images_url'] . '/sort_' . $context['sort_direction'] . '.gif" alt="" />' : '', '</a></th>
 					<th scope="col" width="14%" class="hidden-xs hidden-sm"><a href="', $scripturl, '?board=', $context['current_board'], '.', $context['start'], ';sort=replies', $context['sort_by'] == 'replies' && $context['sort_direction'] == 'up' ? ';desc' : '', '">', $txt['replies'], $context['sort_by'] == 'replies' ? ' <img src="' . $settings['images_url'] . '/sort_' . $context['sort_direction'] . '.gif" alt="" />' : '', '</a> / <a href="', $scripturl, '?board=', $context['current_board'], '.', $context['start'], ';sort=views', $context['sort_by'] == 'views' && $context['sort_direction'] == 'up' ? ';desc' : '', '">', $txt['views'], $context['sort_by'] == 'views' ? ' <img src="' . $settings['images_url'] . '/sort_' . $context['sort_direction'] . '.gif" alt="" />' : '', '</a></th>';
 			// Show a "select all" box for quick moderation?
@@ -244,14 +244,34 @@ function template_main()
 
 			// Some columns require a different shade of the color class.
 			$alternate_class = $color_class;
+			switch($topic['class']) {
+				case "normal_post": 
+					$faicon = 'fa-volume-off';
+					$fatitle= 'Normal topic';
+                                break;
+                                case "hot_post": 
+					$faicon = 'fa-volume-down';
+					$fatitle = 'Hot topic';
+                                break;
+                                case "veryhot_post": 
+					$faicon = 'fa-volume-up';
+					$fatitle = 'Very hot topic';
+                                break;
+				case "normal_post_locked":
+				case "hot_post_locked":
+					$faicon = 'fa-lock';
+					$fatitle = 'Locked topic';
+				break;
+				case "normal_post_locked_sticky":
+					$faicon = 'fa-thumb-tack';
+					$fatitle = 'Sticky topic';
+				break;
+			}
 
 			echo '
 				<tr>
-					<td class="icon1 ', $color_class, '">
-						<img src="', $settings['images_url'], '/topic/', $topic['class'], '.gif" alt="" />
-					</td>
 					<td class="icon2 ', $color_class, '">
-						<img src="', $topic['first_post']['icon_url'], '" alt="" />
+						<i class="fa ' ,$faicon,'" style="font-size:2em;" title="',$fatitle,'"></i>
 					</td>
 					<td class="subject ', $alternate_class, '">
 						<div ', (!empty($topic['quick_mod']['modify']) ? 'id="topic_' . $topic['first_post']['id'] . '" onmouseout="mouse_on_div = 0;" onmouseover="mouse_on_div = 1;" ondblclick="modify_topic(\'' . $topic['id'] . '\', \'' . $topic['first_post']['id'] . '\');"' : ''), '>

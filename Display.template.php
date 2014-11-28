@@ -184,10 +184,6 @@ function template_main()
 					<h1>
 						', $context['subject'], '
 					</h1>
-					<ul class="reset info navbar-right"> 
-						<li class="replies"><img src="',$settings['images_url'] ,'/messages.png" /> '. $context['real_num_replies'] .' '. $txt['replies'] .'</li>
-						<li class="views"><img src="',$settings['images_url'] ,'/views.png" /> ', $context['num_views'], ' '. $txt['views'] .'</li>
-					</ul>
 				</div>';
 
 	if (!empty($settings['display_who_viewing']))
