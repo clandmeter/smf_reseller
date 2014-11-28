@@ -2019,7 +2019,13 @@ p#whoisviewing
 }
 .poster li.avatar img
 {
-	width: 100%;
+	/*width: 100%;*/
+	margin-top: 15px;
+}
+
+.poster li.avatar i
+{
+	margin-top: 15px;
 }
 .poster li.warning
 {
