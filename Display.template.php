@@ -265,7 +265,7 @@ function template_main()
 			echo'
 							<li class="avatar">
 								<a href="', $scripturl, '?action=profile;u=', $message['member']['id'], '">
-									<img src="',$settings['images_url'] ,'/noavatar.png" /> 
+									<i class="fa fa-user" style="font-size:7em;"></i> 
 								</a>
 							</li>';
 		}
