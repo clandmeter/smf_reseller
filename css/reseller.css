@@ -235,3 +235,7 @@ footer, footer a
 {
 	opacity: 1;
 }
+
+.table>tbody>tr>td {
+	vertical-align: middle;
+}
