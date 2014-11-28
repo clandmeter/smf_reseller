@@ -294,7 +294,7 @@ function template_main()
 						', $topic['views'], ' ', $txt['views'], '
 					</td>
 					<td class="lastpost ', $alternate_class, '  hidden-xs hidden-sm">
-						<a href="', $topic['last_post']['href'], '"><img src="', $settings['images_url'], '/icons/last_post.gif" alt="', $txt['last_post'], '" title="', $txt['last_post'], '" /></a>
+						<a href="', $topic['last_post']['href'], '"><i class="fa fa-angle-double-right" style="font-size: 2em;float: right;" title="', $txt['last_post'], '"></i></a>
 						', $topic['last_post']['time'], '<br />
 						', $txt['by'], ' ', $topic['last_post']['member']['link'], '
 					</td>';
