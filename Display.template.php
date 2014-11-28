@@ -469,9 +469,6 @@ function template_main()
 										echo'
 										</ul>
 										<div class="keyinfo">
-											<div class="messageicon">
-												<img src="', $message['icon_url'] . '" alt=""', $message['can_modify'] ? ' id="msg_icon_' . $message['id'] . '"' : '', ' />
-											</div>
 											<h5 id="subject_', $message['id'], '">
 												<a href="', $message['href'], '" rel="nofollow">', $message['subject'], '</a>
 											</h5>
