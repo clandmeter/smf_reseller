@@ -364,11 +364,6 @@ function template_main()
 				echo '
 								<li class="profile">
 									<ul>';
-				// Don't show the profile button if you're not allowed to view the profile.
-				if ($message['member']['can_view_profile'])
-					echo '
-										<li><a href="', $message['member']['href'], '">', ($settings['use_image_buttons'] ? '<img src="' . $settings['images_url'] . '/icons/profile_sm.gif" alt="' . $txt['view_profile'] . '" title="' . $txt['view_profile'] . '" />' : $txt['view_profile']), '</a></li>';
-
 				// Don't show an icon if they haven't specified a website.
 				if ($message['member']['website']['url'] != '' && !isset($context['disabled_fields']['website']))
 					echo '
