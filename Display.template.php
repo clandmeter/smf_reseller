@@ -275,13 +275,13 @@ function template_main()
 			echo '
 								<li class="title">', $message['member']['title'], '</li>';
 
-		$starsCount = substr_count($message['member']['group_stars'], 'img src');
+		//when changing icon/name, the name need to be updated here.
+		$starsCount = substr_count($message['member']['group_stars'], 'gbt.gif');
 		unset($stars);
-		$i = 0;
-		while ($i <= $starCount) {
+		for ($i = 0; $i <= $starCount; $i++) {
 			$stars .= '<i class="fa fa-star-o"></i>';
-			++$i;
 		}
+		$stars = ($starsCount) ? $stars : $message['member']['group_stars'];
 
 		// Don't show these things for guests.
 		if (!$message['member']['is_guest'])
@@ -289,7 +289,7 @@ function template_main()
 			
 			// Show the stars if they are not in a group.
 				echo '
-								<li class="stars">', $stars, '</li>';
+								<li class="stars">', $stars , '</li>';
 
 			// Show how many posts they have made.
 			if (!isset($context['disabled_fields']['posts']))
