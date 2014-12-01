@@ -38,7 +38,7 @@ function template_main()
 			// If the board or children is new, show an indicator.
 			if ($board['new'] || $board['children_new'])
 				echo '
-							<i class="fa fa-comments" alt="', $txt['new_posts'], '" title="', $txt['new_posts'], '" style="font-size: 3em;"></i>';
+							<i class="fa fa-comments" title="', $txt['new_posts'], '" style="font-size: 3em;"></i>';
 			// Is it a redirection board?
 			elseif ($board['is_redirect'])
 				echo '
@@ -46,7 +46,7 @@ function template_main()
 			// No new posts at all! The agony!!
 			else
 				echo '
-							<i class="fa fa-comments-o" alt="', $txt['old_posts'], '" title="', $txt['old_posts'], '" style="font-size: 3em;"></i>';
+							<i class="fa fa-comments-o" title="', $txt['old_posts'], '" style="font-size: 3em;"></i>';
 
 			echo '
 						</a>
