@@ -245,7 +245,8 @@ function template_main()
 			// Some columns require a different shade of the color class.
 			$alternate_class = $color_class;
 			switch($topic['class']) {
-				case "normal_post": 
+				case "normal_post":
+				case "my_normal_post":
 					$faicon = 'fa-volume-off';
 					$fatitle= 'Normal topic';
                                 break;
@@ -253,7 +254,8 @@ function template_main()
 					$faicon = 'fa-volume-down';
 					$fatitle = 'Hot topic';
                                 break;
-                                case "veryhot_post": 
+                                case "veryhot_post":
+				case "my_veryhot_post":
 					$faicon = 'fa-volume-up';
 					$fatitle = 'Very hot topic';
                                 break;
@@ -266,6 +268,14 @@ function template_main()
 					$faicon = 'fa-thumb-tack';
 					$fatitle = 'Sticky topic';
 				break;
+				case "normal_poll":
+				case "my_normal_poll":
+					$faicon = 'fa-bar-chart';
+					$fatitle = 'Poll';
+				break;
+				default:
+					$faicon = 'fa-ban';
+					$fatitle="No icon found";
 			}
 
 			echo '
@@ -405,15 +415,15 @@ function template_main()
 	if (!$context['no_topic_listing'])
 		echo '
 			<p class="floatleft smalltext">', !empty($modSettings['enableParticipation']) && $context['user']['is_logged'] ? '
-				<img src="' . $settings['images_url'] . '/topic/my_normal_post.gif" alt="" align="middle" /> ' . $txt['participation_caption'] . '<br />' : '', '
-				<img src="' . $settings['images_url'] . '/topic/normal_post.gif" alt="" align="middle" /> ' . $txt['normal_topic'] . '<br />
-				<img src="' . $settings['images_url'] . '/topic/hot_post.gif" alt="" align="middle" /> ' . sprintf($txt['hot_topics'], $modSettings['hotTopicPosts']) . '<br />
-				<img src="' . $settings['images_url'] . '/topic/veryhot_post.gif" alt="" align="middle" /> ' . sprintf($txt['very_hot_topics'], $modSettings['hotTopicVeryPosts']) . '
+				<i class="fa fa-volume-off"></i> ' . $txt['participation_caption'] . '<br />' : '', '
+				<i class="fa fa-volume-off"></i> ' . $txt['normal_topic'] . '<br />
+				<i class="fa fa-volume-down"></i> ' . sprintf($txt['hot_topics'], $modSettings['hotTopicPosts']) . '<br />
+				<i class="fa fa-volume-up"></i> ' . sprintf($txt['very_hot_topics'], $modSettings['hotTopicVeryPosts']) . '
 			</p>
 			<p class="smalltext">
-				<img src="' . $settings['images_url'] . '/icons/quick_lock.gif" alt="" align="middle" /> ' . $txt['locked_topic'] . '<br />' . ($modSettings['enableStickyTopics'] == '1' ? '
-				<img src="' . $settings['images_url'] . '/icons/quick_sticky.gif" alt="" align="middle" /> ' . $txt['sticky_topic'] . '<br />' : '') . ($modSettings['pollMode'] == '1' ? '
-				<img src="' . $settings['images_url'] . '/topic/normal_poll.gif" alt="" align="middle" /> ' . $txt['poll'] : '') . '
+				<i class="fa fa-lock"></i> ' . $txt['locked_topic'] . '<br />' . ($modSettings['enableStickyTopics'] == '1' ? '
+				<i class="fa fa-thumb-tack"></i> ' . $txt['sticky_topic'] . '<br />' : '') . ($modSettings['pollMode'] == '1' ? '
+				<i class="fa fa-bar-chart"></i> ' . $txt['poll'] : '') . '
 			</p>';
 
 	echo '
