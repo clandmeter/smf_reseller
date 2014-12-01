@@ -150,7 +150,7 @@ function template_main()
 				// Is it a redirection board?
 				elseif ($board['is_redirect'])
 					echo '
-							<img src="', $settings['images_url'], '/', $context['theme_variant_url'], 'redirect.png" alt="*" title="*" />';
+							<i class="fa fa-retweet" style="font-size: 3em"></i>';
 				// No new posts at all! The agony!!
 				else
 					echo '
