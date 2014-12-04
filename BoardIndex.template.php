@@ -373,7 +373,7 @@ function template_info_center()
 			<div class="title_barIC">
 				<h4 class="titlebg">
 					<span class="ie6_header floatleft">
-						<a href="', $scripturl, '?action=stats"><img class="icon" src="', $settings['images_url'], '/icons/info.gif" alt="', $txt['forum_stats'], '" /></a>
+						<a href="', $scripturl, '?action=stats"><i class="fa fa-pie-chart" title="', $txt['online_stats'], '" style="color:#000;"></i></a>
 						', $txt['forum_stats'], '
 					</span>
 				</h4>
@@ -391,7 +391,7 @@ function template_info_center()
 			<div class="title_barIC">
 				<h4 class="titlebg">
 					<span class="ie6_header floatleft">
-						', $context['show_who'] ? '<a href="' . $scripturl . '?action=who' . '">' : '', '<img class="icon" src="', $settings['images_url'], '/icons/online.gif', '" alt="', $txt['online_users'], '" />', $context['show_who'] ? '</a>' : '', '
+						', $context['show_who'] ? '<a href="' . $scripturl . '?action=who' . '">' : '', '<i class="fa fa-users" title="', $txt['online_users'], '" style="color:#000;"></i>', $context['show_who'] ? '</a>' : '', '
 						', $txt['online_users'], '
 					</span>
 				</h4>
