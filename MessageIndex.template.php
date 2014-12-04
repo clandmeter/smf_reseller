@@ -272,13 +272,14 @@ function template_main()
 				break;
 				case "normal_poll":
 				case "my_normal_poll":
+				case "normal_poll_sticky":
 					$faicon = 'fa-bar-chart';
 					$fatitle = 'Poll';
 					$fastyle = 'font-size:1.2em;';
 				break;
 				default:
 					$faicon = 'fa-ban';
-					$fatitle="No icon found";
+					$fatitle=$topic['class'];
 			}
 
 			echo '
