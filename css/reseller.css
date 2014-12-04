@@ -239,3 +239,7 @@ footer, footer a
 .table>tbody>tr>td {
 	vertical-align: middle;
 }
+
+.smalltext, tr.smalltext th {
+	margin-right: 10px;
+}

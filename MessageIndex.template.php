@@ -415,15 +415,15 @@ function template_main()
 	if (!$context['no_topic_listing'])
 		echo '
 			<p class="floatleft smalltext">', !empty($modSettings['enableParticipation']) && $context['user']['is_logged'] ? '
-				<i class="fa fa-volume-off"></i> ' . $txt['participation_caption'] . '<br />' : '', '
-				<i class="fa fa-volume-off"></i> ' . $txt['normal_topic'] . '<br />
-				<i class="fa fa-volume-down"></i> ' . sprintf($txt['hot_topics'], $modSettings['hotTopicPosts']) . '<br />
-				<i class="fa fa-volume-up"></i> ' . sprintf($txt['very_hot_topics'], $modSettings['hotTopicVeryPosts']) . '
+				<i class="fa fa-volume-off fa-fw"></i> ' . $txt['participation_caption'] . '<br />' : '', '
+				<i class="fa fa-volume-off fa-fw"></i> ' . $txt['normal_topic'] . '<br />
+				<i class="fa fa-volume-down fa-fw"></i> ' . sprintf($txt['hot_topics'], $modSettings['hotTopicPosts']) . '<br />
+				<i class="fa fa-volume-up fa-fw"></i> ' . sprintf($txt['very_hot_topics'], $modSettings['hotTopicVeryPosts']) . '
 			</p>
 			<p class="smalltext">
-				<i class="fa fa-lock"></i> ' . $txt['locked_topic'] . '<br />' . ($modSettings['enableStickyTopics'] == '1' ? '
-				<i class="fa fa-thumb-tack"></i> ' . $txt['sticky_topic'] . '<br />' : '') . ($modSettings['pollMode'] == '1' ? '
-				<i class="fa fa-bar-chart"></i> ' . $txt['poll'] : '') . '
+				<i class="fa fa-lock fa-fw"></i> ' . $txt['locked_topic'] . '<br />' . ($modSettings['enableStickyTopics'] == '1' ? '
+				<i class="fa fa-thumb-tack fa-fw"></i> ' . $txt['sticky_topic'] . '<br />' : '') . ($modSettings['pollMode'] == '1' ? '
+				<i class="fa fa-bar-chart fa-fw"></i> ' . $txt['poll'] : '') . '
 			</p>';
 
 	echo '
