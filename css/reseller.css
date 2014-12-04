@@ -243,3 +243,7 @@ footer, footer a
 .smalltext, tr.smalltext th {
 	margin-right: 10px;
 }
+
+div#pollmoderation {
+	overflow: inherit;
+}
