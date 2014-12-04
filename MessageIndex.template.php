@@ -268,6 +268,7 @@ function template_main()
 				break;
 				case "normal_post_locked_sticky":
 				case "normal_post_sticky":
+				case "veryhot_post_sticky":
 					$faicon = 'fa-thumb-tack';
 					$fatitle = 'Sticky topic';
 				break;
