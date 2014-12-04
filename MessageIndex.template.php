@@ -267,6 +267,7 @@ function template_main()
 					$fastyle = 'font-size:1.6em;';
 				break;
 				case "normal_post_locked_sticky":
+				case "normal_post_sticky":
 					$faicon = 'fa-thumb-tack';
 					$fatitle = 'Sticky topic';
 				break;
