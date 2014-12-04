@@ -244,6 +244,7 @@ function template_main()
 
 			// Some columns require a different shade of the color class.
 			$alternate_class = $color_class;
+			$fastyle = 'font-size:2em;';
 			switch($topic['class']) {
 				case "normal_post":
 				case "my_normal_post":
@@ -263,6 +264,7 @@ function template_main()
 				case "hot_post_locked":
 					$faicon = 'fa-lock';
 					$fatitle = 'Locked topic';
+					$fastyle = 'font-size:1.6em;';
 				break;
 				case "normal_post_locked_sticky":
 					$faicon = 'fa-thumb-tack';
@@ -272,6 +274,7 @@ function template_main()
 				case "my_normal_poll":
 					$faicon = 'fa-bar-chart';
 					$fatitle = 'Poll';
+					$fastyle = 'font-size:1.2em;';
 				break;
 				default:
 					$faicon = 'fa-ban';
@@ -281,7 +284,7 @@ function template_main()
 			echo '
 				<tr>
 					<td class="icon2 ', $color_class, '">
-						<i class="fa ' ,$faicon,'" style="font-size:2em;" title="',$fatitle,'"></i>
+						<i class="fa ' ,$faicon,'" style="', $fastyle ,'" title="',$fatitle,'"></i>
 					</td>
 					<td class="subject ', $alternate_class, '">
 						<div ', (!empty($topic['quick_mod']['modify']) ? 'id="topic_' . $topic['first_post']['id'] . '" onmouseout="mouse_on_div = 0;" onmouseover="mouse_on_div = 1;" ondblclick="modify_topic(\'' . $topic['id'] . '\', \'' . $topic['first_post']['id'] . '\');"' : ''), '>
