@@ -86,6 +86,7 @@ function template_html_above()
 	<link rel="stylesheet" type="text/css" href="', $settings['theme_url'], '/css/bootstrap.css" />
 	<link rel="stylesheet" type="text/css" href="', $settings['theme_url'], '/css/reseller.css" />
 	<link rel="stylesheet" type="text/css" href="', $settings['theme_url'], '/css/index', $context['theme_variant'], '.css?fin20" />
+	<link rel="stylesheet" type="text/css" href="', $settings['theme_url'], '/css/reseller.css" />
 	<link rel="shortcut icon" href="', $settings['theme_url'], '/images/favicon.ico" type="image/x-icon" />';
 
 	// Some browsers need an extra stylesheet due to bugs/compatibility issues.
