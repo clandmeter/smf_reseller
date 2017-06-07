@@ -231,6 +231,7 @@ function template_body_above()
 										<div class="checkbox">
 											<label>
 												<input name="cookielength" type="checkbox" value="-1" /> ', $txt['rs_remember'] ,'
+												<input type="hidden" name="', $context['session_var'], '" value="', $context['session_id'], '" />
 											</label>
 										</div>
 								</div>
